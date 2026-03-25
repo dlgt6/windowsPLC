@@ -1,0 +1,70 @@
+name: Build and Release
+
+on:
+  push:
+    branches:
+      - main
+      - master
+    tags:
+      - 'v*'
+  pull_request:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+        
+    - name: Restore dependencies
+      run: dotnet restore
+      
+    - name: Build project
+      run: dotnet build --configuration Release --no-restore
+      
+    - name: Publish single-file executable
+      run: |
+        dotnet publish -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:EnableCompressionInSingleFile=true -p:PublishTrimmed=true -p:TrimMode=link -p:PublishReadyToRun=true -o ./publish
+        
+    - name: Get version
+      id: get_version
+      run: |
+        if ("${{ github.ref }}" -match "^refs/tags/v") {
+          $version = "${{ github.ref }}" -replace "^refs/tags/v", ""
+          echo "version=$version" >> $env:GITHUB_OUTPUT
+        } else {
+          $version = "latest"
+          echo "version=$version" >> $env:GITHUB_OUTPUT
+        }
+      shell: pwsh
+      
+    - name: Create release package
+      run: |
+        Compress-Archive -Path ./publish/* -DestinationPath ./自动化计算工具-${{ steps.get_version.outputs.version }}.zip
+        
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: 自动化计算工具-${{ steps.get_version.outputs.version }}
+        path: ./自动化计算工具-${{ steps.get_version.outputs.version }}.zip
+        
+    - name: Create Release
+      if: startsWith(github.ref, 'refs/tags/v')
+      uses: softprops/action-gh-release@v1
+      with:
+        files: ./自动化计算工具-${{ steps.get_version.outputs.version }}.zip
+        draft: false
+        prerelease: false
+        generate_release_notes: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
