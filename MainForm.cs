@@ -124,8 +124,8 @@ namespace 自动化计算工具
             {
                 this.groupsData = groupsData;
                 var groupNames = new List<string>(this.groupsData.Keys);
-                resultText.AppendText($"成功导入 {groupNames.Count} 个分组！({decodeMethod})\n", Color.Green);
-                resultText.AppendText($"分组列表：{string.Join(", ", groupNames)}\n");
+                resultText!.AppendText($"成功导入 {groupNames.Count} 个分组！({decodeMethod})\n", Color.Green);
+                resultText!.AppendText($"分组列表：{string.Join(", ", groupNames)}\n");
                 if (groupNames.Count > 0)
                     LoadGroup(groupNames[0]);
             }
@@ -175,10 +175,10 @@ namespace 自动化计算工具
             firstWordMap = JsonSerializer.Deserialize<Dictionary<string, FaultData>>(data["first_word"]) ?? new();
             secondWordMap = JsonSerializer.Deserialize<Dictionary<string, FaultData>>(data["second_word"]) ?? new();
 
-            firstNameLabel.Text = firstName;
-            secondNameLabel.Text = secondName;
-            currentGroupLabel.Text = "当前选择的打包字：默认（无分组）";
-            resultText.AppendText($"打包数据对应表导入完成！({decodeMethod})\n", Color.Green);
+            firstNameLabel!.Text = firstName;
+            secondNameLabel!.Text = secondName;
+            currentGroupLabel!.Text = "当前选择的打包字：默认（无分组）";
+            resultText!.AppendText($"打包数据对应表导入完成！({decodeMethod})\n", Color.Green);
         }
 
         private void ListButton_Click(object? sender, EventArgs e)
@@ -354,12 +354,12 @@ namespace 自动化计算工具
             secondWordMap = groupData.SecondWord;
             currentGroup = groupName;
 
-            firstNameLabel.Text = firstName;
-            secondNameLabel.Text = secondName;
-            currentGroupLabel.Text = $"当前选择的打包字：{groupName}";
+            firstNameLabel!.Text = firstName;
+            secondNameLabel!.Text = secondName;
+            currentGroupLabel!.Text = $"当前选择的打包字：{groupName}";
 
-            resultText.Clear();
-            resultText.AppendText($"已加载打包字：{groupName}\n", Color.Blue);
+            resultText!.Clear();
+            resultText!.AppendText($"已加载打包字：{groupName}\n", Color.Blue);
             resultText.AppendText($"第一个字名称：{firstName}\n");
             resultText.AppendText($"第二个字名称：{secondName}\n");
             resultText.AppendText("════════════════════════\n", Color.Gray);
@@ -397,7 +397,7 @@ namespace 自动化计算工具
 
         private void CheckFault(int wordType)
         {
-            resultText.Clear();
+            resultText!.Clear();
             try
             {
                 int num;
@@ -508,10 +508,10 @@ namespace 自动化计算工具
             statusWordMap = groupData.StatusMap ?? new();
             currentStatusGroup = groupName;
 
-            currentStatusLabel.Text = $"当前选择的状态字分组：{groupName}";
+            currentStatusLabel!.Text = $"当前选择的状态字分组：{groupName}";
 
-            statusResultText.Clear();
-            statusResultText.AppendText($"已加载状态字分组：{groupName}\n", Color.Blue);
+            statusResultText!.Clear();
+            statusResultText!.AppendText($"已加载状态字分组：{groupName}\n", Color.Blue);
             statusResultText.AppendText($"状态字名称：{currentStatusName}\n");
             statusResultText.AppendText("════════════════════════\n", Color.Gray);
             statusResultText.AppendText("状态字映射列表：\n\n", Color.Blue);
@@ -540,11 +540,11 @@ namespace 自动化计算工具
                 return;
             }
 
-            currentStatusLabel.Text = currentStatusGroup != null
+            currentStatusLabel!.Text = currentStatusGroup != null
                 ? $"当前选择的状态字分组：{currentStatusGroup}"
                 : $"当前选择的状态字：{statusKey}";
 
-            statusResultText.Clear();
+            statusResultText!.Clear();
             statusResultText.AppendText($"已加载状态字：{statusKey}\n", Color.Blue);
             statusResultText.AppendText($"状态值：{statusKey}\n");
             statusResultText.AppendText($"描述：{statusWordMap[statusKey]}\n", Color.DarkGreen);
@@ -647,11 +647,11 @@ namespace 自动化计算工具
             {
                 ValidateMemoryInputs();
                 string result = CalculateMemoryResult();
-                memoryResultLabel.Text = result;
+                memoryResultLabel!.Text = result;
             }
             catch (Exception ex)
             {
-                memoryResultLabel.Text = $"错误: {ex.Message}";
+                memoryResultLabel!.Text = $"错误: {ex.Message}";
             }
         }
 

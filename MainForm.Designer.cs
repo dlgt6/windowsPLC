@@ -1,5 +1,6 @@
 namespace 自动化计算工具
 {
+#nullable enable
     partial class MainForm
     {
         private System.ComponentModel.IContainer components = null;
