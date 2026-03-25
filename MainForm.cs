@@ -24,6 +24,7 @@ namespace 自动化计算工具
         public MainForm()
         {
             InitializeComponent();
+            this.Font = new Font("微软雅黑", 9F);
             SwitchMemoryCalcType(1);
         }
 
