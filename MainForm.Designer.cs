@@ -152,7 +152,7 @@ namespace 自动化计算工具
             var inputPanel = new System.Windows.Forms.Panel
             {
                 Location = new System.Drawing.Point(30, 40),
-                Width = 473,
+                Width = 483,
                 Height = 120,
                 AutoSize = true
             };
@@ -185,7 +185,7 @@ namespace 自动化计算工具
             firstCheckButton = new System.Windows.Forms.Button
             {
                 Text = "转换并查询",
-                Location = new System.Drawing.Point(420, 8),
+                Location = new System.Drawing.Point(425, 8),
                 Width = 100,
                 Height = 23
             };
@@ -219,7 +219,7 @@ namespace 自动化计算工具
             secondCheckButton = new System.Windows.Forms.Button
             {
                 Text = "转换并查询",
-                Location = new System.Drawing.Point(420, 48),
+                Location = new System.Drawing.Point(425, 48),
                 Width = 100,
                 Height = 23
             };
@@ -243,7 +243,8 @@ namespace 自动化计算工具
                 ReadOnly = true,
                 BackColor = System.Drawing.Color.White,
                 Font = new System.Drawing.Font("微软雅黑", 9F),
-                ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical
+                ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical,
+                Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right | System.Windows.Forms.AnchorStyles.Bottom
             };
             dataTabPage!.Controls.Add(resultText);
         }
@@ -267,7 +268,8 @@ namespace 自动化计算工具
                 ReadOnly = true,
                 BackColor = System.Drawing.Color.White,
                 Font = new System.Drawing.Font("微软雅黑", 9F),
-                ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical
+                ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical,
+                Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right | System.Windows.Forms.AnchorStyles.Bottom
             };
             statusTabPage!.Controls.Add(statusResultText);
         }
@@ -283,7 +285,8 @@ namespace 自动化计算工具
             memoryLeftPanel = new System.Windows.Forms.Panel
             {
                 Dock = System.Windows.Forms.DockStyle.Left,
-                Width = 150
+                Width = 150,
+                Padding = new System.Windows.Forms.Padding(0, 0, 10, 0)
             };
 
             memoryRightPanel = new System.Windows.Forms.Panel
@@ -294,16 +297,16 @@ namespace 自动化计算工具
             calcTypeGroupBox = new System.Windows.Forms.GroupBox
             {
                 Text = "计算类型",
-                Dock = System.Windows.Forms.DockStyle.Top,
-                Height = 200
+                Dock = System.Windows.Forms.DockStyle.Fill,
+                Padding = new System.Windows.Forms.Padding(10)
             };
 
             calcType1 = new System.Windows.Forms.RadioButton
             {
                 Text = "模拟量计算\r\n16进制地址",
-                Location = new System.Drawing.Point(10, 20),
-                Width = 130,
+                Dock = System.Windows.Forms.DockStyle.Top,
                 Height = 40,
+                Margin = new System.Windows.Forms.Padding(10, 3, 10, 0),
                 Appearance = System.Windows.Forms.Appearance.Button,
                 TextAlign = System.Drawing.ContentAlignment.MiddleCenter
             };
@@ -312,9 +315,9 @@ namespace 自动化计算工具
             calcType2 = new System.Windows.Forms.RadioButton
             {
                 Text = "模拟量计算\r\nR地址",
-                Location = new System.Drawing.Point(10, 65),
-                Width = 130,
+                Dock = System.Windows.Forms.DockStyle.Top,
                 Height = 40,
+                Margin = new System.Windows.Forms.Padding(10, 3, 10, 0),
                 Appearance = System.Windows.Forms.Appearance.Button,
                 TextAlign = System.Drawing.ContentAlignment.MiddleCenter
             };
@@ -323,9 +326,9 @@ namespace 自动化计算工具
             calcType3 = new System.Windows.Forms.RadioButton
             {
                 Text = "数字量计算\r\n16进制地址和位数",
-                Location = new System.Drawing.Point(10, 110),
-                Width = 130,
+                Dock = System.Windows.Forms.DockStyle.Top,
                 Height = 40,
+                Margin = new System.Windows.Forms.Padding(10, 3, 10, 0),
                 Appearance = System.Windows.Forms.Appearance.Button,
                 TextAlign = System.Drawing.ContentAlignment.MiddleCenter
             };
@@ -334,9 +337,9 @@ namespace 自动化计算工具
             calcType4 = new System.Windows.Forms.RadioButton
             {
                 Text = "数字量计算\r\nM地址",
-                Location = new System.Drawing.Point(10, 155),
-                Width = 130,
+                Dock = System.Windows.Forms.DockStyle.Top,
                 Height = 40,
+                Margin = new System.Windows.Forms.Padding(10, 3, 10, 0),
                 Appearance = System.Windows.Forms.Appearance.Button,
                 TextAlign = System.Drawing.ContentAlignment.MiddleCenter
             };
