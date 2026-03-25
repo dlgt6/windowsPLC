@@ -343,16 +343,18 @@ namespace 自动化计算工具
             }
 
             var groupData = groupsData[groupName];
-            if (groupData.FirstWord == null || groupData.SecondWord == null)
+
+            if ((groupData.FirstWord == null || groupData.FirstWord.Count == 0) &&
+                (groupData.SecondWord == null || groupData.SecondWord.Count == 0))
             {
-                MessageBox.Show($"分组 '{groupName}' 中缺少或错误的数据字段", "结构错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"分组 '{groupName}' 中缺少有效的 first_word 或 second_word 数据", "结构错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             firstName = groupData.FirstName ?? "第一个字";
             secondName = groupData.SecondName ?? "第二个字";
-            firstWordMap = groupData.FirstWord;
-            secondWordMap = groupData.SecondWord;
+            firstWordMap = groupData.FirstWord ?? new();
+            secondWordMap = groupData.SecondWord ?? new();
             currentGroup = groupName;
 
             firstNameLabel!.Text = firstName;
@@ -763,10 +765,19 @@ namespace 自动化计算工具
 
         public class GroupData
         {
+            [JsonPropertyName("first_name")]
             public string? FirstName { get; set; }
+
+            [JsonPropertyName("second_name")]
             public string? SecondName { get; set; }
+
+            [JsonPropertyName("first_word")]
             public Dictionary<string, FaultData>? FirstWord { get; set; }
+
+            [JsonPropertyName("second_word")]
             public Dictionary<string, FaultData>? SecondWord { get; set; }
+
+            [JsonPropertyName("status_name")]
             public string? StatusName { get; set; }
 
             [JsonPropertyName("status_map")]

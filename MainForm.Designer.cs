@@ -19,7 +19,10 @@ namespace 自动化计算工具
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Text = "自动化计算工具-王国强-202603";
-            this.ClientSize = new System.Drawing.Size(560, 620);
+            
+            // ==================== 调整后的窗口大小（推荐） ====================
+            this.ClientSize = new System.Drawing.Size(565, 615);   // 宽度565、高度615 最合适
+            
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -136,7 +139,6 @@ namespace 自动化计算工具
                 Height = 118
             };
 
-            // 第一个字
             firstWordLabel = new System.Windows.Forms.Label
             {
                 Text = "第一个字(十进制):",
@@ -173,7 +175,6 @@ namespace 自动化计算工具
             };
             firstCheckButton.Click += (s, e) => CheckFault(1);
 
-            // 第二个字
             secondWordLabel = new System.Windows.Forms.Label
             {
                 Text = "第二个字(十进制):",
