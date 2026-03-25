@@ -442,10 +442,14 @@ namespace 自动化计算工具
                     {
                         var faultData = faultMap[bitPos.ToString()];
                         char displayOn = faultData.DisplayOn ?? '1';
-                        if (reversedBits[bitPos] == displayOn && !string.IsNullOrEmpty(faultData.Description))
+                        if (reversedBits[bitPos] == displayOn)
                         {
-                            resultText.AppendText($"  • 第{bitPos}位: {faultData.Description}\n", Color.DarkRed);
-                            found = true;
+                            string description = faultData.Description ?? "";
+                            if (!string.IsNullOrEmpty(description))
+                            {
+                                resultText.AppendText($"  • 第{bitPos}位: {description}\n", Color.DarkRed);
+                                found = true;
+                            }
                         }
                     }
                 }

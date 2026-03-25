@@ -15,7 +15,7 @@
     <Description>自动化计算工具-用于查看和分析打包数据及状态字</Description>
     <Copyright>© 2026 德龙轧钢自动化团队</Copyright>
     <PublishSingleFile>true</PublishSingleFile>
-    <SelfContained>true</SelfContained>
+    <SelfContained>false</SelfContained>
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <PublishReadyToRun>false</PublishReadyToRun>
     <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>

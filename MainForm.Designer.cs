@@ -19,7 +19,7 @@ namespace 自动化计算工具
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Text = "自动化计算工具-王国强-202603";
-            this.ClientSize = new System.Drawing.Size(560, 580);
+            this.ClientSize = new System.Drawing.Size(560, 620);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
