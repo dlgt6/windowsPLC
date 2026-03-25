@@ -71,7 +71,7 @@ namespace 自动化计算工具
             {
                 Dock = System.Windows.Forms.DockStyle.Top,
                 Height = 50,
-                Padding = new System.Windows.Forms.Padding(10, 10, 10, 10)
+                Padding = new System.Windows.Forms.Padding(20, 10, 20, 10)
             };
 
             importButton = new System.Windows.Forms.Button
@@ -160,7 +160,7 @@ namespace 自动化计算工具
             firstWordLabel = new System.Windows.Forms.Label
             {
                 Text = "第一个字(十进制):",
-                Location = new System.Drawing.Point(0, 0),
+                Location = new System.Drawing.Point(0, 8),
                 Width = 120,
                 Height = 23
             };
@@ -170,14 +170,14 @@ namespace 自动化计算工具
                 Text = "第一个字",
                 Font = new System.Drawing.Font("微软雅黑", 8F),
                 ForeColor = System.Drawing.Color.Gray,
-                Location = new System.Drawing.Point(125, 0),
+                Location = new System.Drawing.Point(125, 8),
                 Width = 80,
                 Height = 23
             };
 
             firstWordEntry = new System.Windows.Forms.TextBox
             {
-                Location = new System.Drawing.Point(210, 0),
+                Location = new System.Drawing.Point(210, 8),
                 Width = 200,
                 Height = 23
             };
@@ -185,7 +185,7 @@ namespace 自动化计算工具
             firstCheckButton = new System.Windows.Forms.Button
             {
                 Text = "转换并查询",
-                Location = new System.Drawing.Point(420, 0),
+                Location = new System.Drawing.Point(420, 8),
                 Width = 100,
                 Height = 23
             };
@@ -194,7 +194,7 @@ namespace 自动化计算工具
             secondWordLabel = new System.Windows.Forms.Label
             {
                 Text = "第二个字(十进制):",
-                Location = new System.Drawing.Point(0, 40),
+                Location = new System.Drawing.Point(0, 48),
                 Width = 120,
                 Height = 23
             };
@@ -204,14 +204,14 @@ namespace 自动化计算工具
                 Text = "第二个字",
                 Font = new System.Drawing.Font("微软雅黑", 8F),
                 ForeColor = System.Drawing.Color.Gray,
-                Location = new System.Drawing.Point(125, 40),
+                Location = new System.Drawing.Point(125, 48),
                 Width = 80,
                 Height = 23
             };
 
             secondWordEntry = new System.Windows.Forms.TextBox
             {
-                Location = new System.Drawing.Point(210, 40),
+                Location = new System.Drawing.Point(210, 48),
                 Width = 200,
                 Height = 23
             };
@@ -219,7 +219,7 @@ namespace 自动化计算工具
             secondCheckButton = new System.Windows.Forms.Button
             {
                 Text = "转换并查询",
-                Location = new System.Drawing.Point(420, 40),
+                Location = new System.Drawing.Point(420, 48),
                 Width = 100,
                 Height = 23
             };
@@ -354,23 +354,31 @@ namespace 自动化计算工具
                 Text = "输入参数",
                 Dock = System.Windows.Forms.DockStyle.Top,
                 Height = 150,
-                Padding = new System.Windows.Forms.Padding(10)
+                Padding = new System.Windows.Forms.Padding(15)
             };
 
             memoryCalculateButton = new System.Windows.Forms.Button
             {
                 Text = "开始计算",
                 Width = 150,
-                Height = 35,
-                Anchor = System.Windows.Forms.AnchorStyles.Top
+                Height = 35
             };
             memoryCalculateButton.Click += MemoryCalculateButton_Click;
+
+            var buttonPanel = new System.Windows.Forms.Panel
+            {
+                Dock = System.Windows.Forms.DockStyle.Top,
+                Height = 50
+            };
+            buttonPanel.Controls.Add(memoryCalculateButton);
+            memoryCalculateButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            memoryCalculateButton.Location = new System.Drawing.Point(10, 8);
 
             memoryResultGroupBox = new System.Windows.Forms.GroupBox
             {
                 Text = "计算结果",
                 Dock = System.Windows.Forms.DockStyle.Fill,
-                Padding = new System.Windows.Forms.Padding(10)
+                Padding = new System.Windows.Forms.Padding(15)
             };
 
             memoryResultLabel = new System.Windows.Forms.Label
@@ -379,13 +387,14 @@ namespace 自动化计算工具
                 Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Bold),
                 ForeColor = System.Drawing.Color.FromArgb(231, 76, 60),
                 AutoSize = true,
-                TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+                TextAlign = System.Drawing.ContentAlignment.MiddleCenter,
+                Padding = new System.Windows.Forms.Padding(0, 10, 0, 10)
             };
 
             memoryResultGroupBox.Controls.Add(memoryResultLabel);
 
             memoryRightPanel.Controls.Add(memoryInputGroupBox);
-            memoryRightPanel.Controls.Add(memoryCalculateButton);
+            memoryRightPanel.Controls.Add(buttonPanel);
             memoryRightPanel.Controls.Add(memoryResultGroupBox);
 
             mainPanel.Controls.Add(memoryLeftPanel);
