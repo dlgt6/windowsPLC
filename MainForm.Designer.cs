@@ -3,7 +3,7 @@ namespace 自动化计算工具
 #nullable enable
     partial class MainForm
     {
-        private System.ComponentModel.IContainer components = null;
+        private System.ComponentModel.IContainer? components = null!;
 
         protected override void Dispose(bool disposing)
         {
@@ -147,7 +147,7 @@ namespace 自动化计算工具
                 AutoSize = true,
                 Location = new System.Drawing.Point(20, 10)
             };
-            dataTabPage.Controls.Add(currentGroupLabel);
+            dataTabPage!.Controls.Add(currentGroupLabel!);
 
             var inputPanel = new System.Windows.Forms.Panel
             {
@@ -234,7 +234,7 @@ namespace 自动化计算工具
             inputPanel.Controls.Add(secondWordEntry);
             inputPanel.Controls.Add(secondCheckButton);
 
-            dataTabPage.Controls.Add(inputPanel);
+            dataTabPage!.Controls.Add(inputPanel);
 
             resultText = new System.Windows.Forms.RichTextBox
             {
@@ -245,7 +245,7 @@ namespace 自动化计算工具
                 Font = new System.Drawing.Font("微软雅黑", 9F),
                 ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical
             };
-            dataTabPage.Controls.Add(resultText);
+            dataTabPage!.Controls.Add(resultText);
         }
 
         private void CreateStatusTabPage()
@@ -258,7 +258,7 @@ namespace 自动化计算工具
                 AutoSize = true,
                 Location = new System.Drawing.Point(20, 10)
             };
-            statusTabPage.Controls.Add(currentStatusLabel);
+            statusTabPage!.Controls.Add(currentStatusLabel!);
 
             statusResultText = new System.Windows.Forms.RichTextBox
             {
@@ -269,7 +269,7 @@ namespace 自动化计算工具
                 Font = new System.Drawing.Font("微软雅黑", 9F),
                 ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical
             };
-            statusTabPage.Controls.Add(statusResultText);
+            statusTabPage!.Controls.Add(statusResultText);
         }
 
         private void CreateMemoryTabPage()
@@ -391,7 +391,7 @@ namespace 自动化计算工具
             mainPanel.Controls.Add(memoryLeftPanel);
             mainPanel.Controls.Add(memoryRightPanel);
 
-            memoryTabPage.Controls.Add(mainPanel);
+            memoryTabPage!.Controls.Add(mainPanel);
 
             calcType1.Checked = true;
         }
