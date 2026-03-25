@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <AssemblyName>自动化计算工具</AssemblyName>
+    <RootNamespace>自动化计算工具</RootNamespace>
+    <Version>3.0.0</Version>
+    <Authors>德龙轧钢自动化团队</Authors>
+    <Product>自动化计算工具-王国强-202603</Product>
+    <Description>自动化计算工具-用于查看和分析打包数据及状态字</Description>
+    <Copyright>© 2026 德龙轧钢自动化团队</Copyright>
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <PublishTrimmed>true</PublishTrimmed>
+    <TrimMode>link</TrimMode>
+    <PublishReadyToRun>true</PublishReadyToRun>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="8.0.0" />
+  </ItemGroup>
+
+</Project>

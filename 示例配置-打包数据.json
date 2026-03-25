@@ -1,0 +1,132 @@
+{
+  "groups": {
+    "轧机状态": {
+      "first_name": "状态字1",
+      "second_name": "状态字2",
+      "first_word": {
+        "0": {
+          "description": "设备正常",
+          "display_on": "0"
+        },
+        "1": {
+          "description": "急停按下",
+          "display_on": "1"
+        },
+        "2": {
+          "description": "压力过高",
+          "display_on": "1"
+        },
+        "3": {
+          "description": "温度过高",
+          "display_on": "1"
+        },
+        "4": {
+          "description": "速度超限",
+          "display_on": "1"
+        },
+        "5": {
+          "description": "位置偏差",
+          "display_on": "1"
+        },
+        "6": {
+          "description": "通信故障",
+          "display_on": "1"
+        },
+        "7": {
+          "description": "电源故障",
+          "display_on": "1"
+        }
+      },
+      "second_word": {
+        "0": {
+          "description": "运行中",
+          "display_on": "0"
+        },
+        "1": {
+          "description": "待机",
+          "display_on": "1"
+        },
+        "2": {
+          "description": "故障",
+          "display_on": "1"
+        },
+        "3": {
+          "description": "维护中",
+          "display_on": "1"
+        },
+        "4": {
+          "description": "自动模式",
+          "display_on": "1"
+        },
+        "5": {
+          "description": "手动模式",
+          "display_on": "1"
+        },
+        "6": {
+          "description": "远程控制",
+          "display_on": "1"
+        },
+        "7": {
+          "description": "本地控制",
+          "display_on": "1"
+        }
+      }
+    },
+    "加热炉状态": {
+      "first_name": "温度状态",
+      "second_name": "燃烧状态",
+      "first_word": {
+        "0": {
+          "description": "温度正常",
+          "display_on": "0"
+        },
+        "1": {
+          "description": "温度偏低",
+          "display_on": "1"
+        },
+        "2": {
+          "description": "温度偏高",
+          "display_on": "1"
+        },
+        "3": {
+          "description": "加热不均",
+          "display_on": "1"
+        },
+        "4": {
+          "description": "传感器故障",
+          "display_on": "1"
+        },
+        "5": {
+          "description": "加热器故障",
+          "display_on": "1"
+        }
+      },
+      "second_word": {
+        "0": {
+          "description": "燃烧正常",
+          "display_on": "0"
+        },
+        "1": {
+          "description": "火焰检测失败",
+          "display_on": "1"
+        },
+        "2": {
+          "description": "燃气压力异常",
+          "display_on": "1"
+        },
+        "3": {
+          "description": "空气压力异常",
+          "display_on": "1"
+        },
+        "4": {
+          "description": "点火失败",
+          "display_on": "1"
+        },
+        "5": {
+          "description": "熄火保护",
+          "display_on": "1"
+        }
+      }
+    }
+  }
+}
