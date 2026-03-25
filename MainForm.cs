@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Windows.Forms;
 
 namespace 自动化计算工具
@@ -767,6 +768,8 @@ namespace 自动化计算工具
             public Dictionary<string, FaultData>? FirstWord { get; set; }
             public Dictionary<string, FaultData>? SecondWord { get; set; }
             public string? StatusName { get; set; }
+
+            [JsonPropertyName("status_map")]
             public Dictionary<string, string>? StatusMap { get; set; }
         }
     }
