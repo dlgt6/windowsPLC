@@ -578,7 +578,7 @@ namespace 自动化计算工具
             memoryInputGroupBox.Controls.Clear();
 
             var configs = GetCalcTypeConfigs(calcType);
-            int yPos = 20;
+            int yPos = 15;
 
             foreach (var (labelText, key, fgColor) in configs)
             {
@@ -586,19 +586,23 @@ namespace 自动化计算工具
                 {
                     Text = labelText,
                     Location = new Point(10, yPos),
-                    Width = 150,
+                    Width = 180,
                     Height = 23,
-                    Font = new Font("微软雅黑", 9F)
+                    Font = new Font("微软雅黑", 9F),
+                    TextAlign = ContentAlignment.MiddleLeft
                 };
 
                 var entry = new TextBox
                 {
-                    Location = new Point(170, yPos),
+                    Location = new Point(200, yPos),
                     Width = 200,
                     Height = 23,
                     Font = new Font("微软雅黑", 9F),
-                    ForeColor = fgColor
+                    ForeColor = fgColor,
+                    BackColor = Color.White,
+                    BorderStyle = BorderStyle.FixedSingle
                 };
+                entry.KeyPress += (s, e) => { if (e.KeyChar == (char)Keys.Enter) { MemoryCalculateButton_Click(null, EventArgs.Empty); e.Handled = true; } };
 
                 memoryEntries[key] = entry;
                 memoryInputGroupBox.Controls.Add(label);
