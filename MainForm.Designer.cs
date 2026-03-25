@@ -21,7 +21,7 @@ namespace 自动化计算工具
             this.Text = "自动化计算工具-王国强-202603";
             
             // ==================== 调整后的窗口大小（推荐） ====================
-            this.ClientSize = new System.Drawing.Size(565, 615);   // 宽度565、高度615 最合适
+            this.ClientSize = new System.Drawing.Size(575, 640);   // 宽度575、高度640，让Tab标题完整显示
             
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -105,8 +105,11 @@ namespace 自动化计算工具
             tabControl = new System.Windows.Forms.TabControl
             {
                 Dock = System.Windows.Forms.DockStyle.Fill,
-                Margin = new System.Windows.Forms.Padding(10, 5, 10, 10),
-                Appearance = System.Windows.Forms.TabAppearance.Normal
+                Margin = new System.Windows.Forms.Padding(10, 8, 10, 10),
+                Appearance = System.Windows.Forms.TabAppearance.Normal,
+                Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Bold),
+                ItemSize = new System.Drawing.Size(0, 32),
+                Padding = new System.Drawing.Point(12, 8)
             };
 
             dataTabPage = new System.Windows.Forms.TabPage("  打包数据查看  ");
@@ -225,7 +228,7 @@ namespace 自动化计算工具
             resultText = new System.Windows.Forms.RichTextBox
             {
                 Location = new System.Drawing.Point(25, 175),
-                Size = new System.Drawing.Size(510, 360),
+                Size = new System.Drawing.Size(510, 370),
                 ReadOnly = true,
                 BackColor = System.Drawing.Color.White,
                 Font = new System.Drawing.Font("微软雅黑", 9.75F),
@@ -251,7 +254,7 @@ namespace 自动化计算工具
             statusResultText = new System.Windows.Forms.RichTextBox
             {
                 Location = new System.Drawing.Point(25, 48),
-                Size = new System.Drawing.Size(510, 487),
+                Size = new System.Drawing.Size(510, 495),
                 ReadOnly = true,
                 BackColor = System.Drawing.Color.White,
                 Font = new System.Drawing.Font("微软雅黑", 9.75F),
