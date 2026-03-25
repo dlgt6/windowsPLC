@@ -1,11 +1,23 @@
 name: Build and Release
 
 on:
+  push:
+    branches:
+      - main
+      - master
+    tags:
+      - 'v*'
+  pull_request:
+    branches:
+      - main
+      - master
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: windows-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     
     steps:
     - name: Checkout code
@@ -38,21 +50,17 @@ jobs:
         }
       shell: pwsh
       
-    - name: Create release package
-      run: |
-        Compress-Archive -Path ./publish/* -DestinationPath ./自动化计算工具-${{ steps.get_version.outputs.version }}.zip
-        
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
         name: 自动化计算工具-${{ steps.get_version.outputs.version }}
-        path: ./自动化计算工具-${{ steps.get_version.outputs.version }}.zip
+        path: ./publish/自动化计算工具.exe
         
     - name: Create Release
       if: startsWith(github.ref, 'refs/tags/v')
       uses: softprops/action-gh-release@v1
       with:
-        files: ./自动化计算工具-${{ steps.get_version.outputs.version }}.zip
+        files: ./publish/自动化计算工具.exe
         draft: false
         prerelease: false
         generate_release_notes: true
