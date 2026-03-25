@@ -108,7 +108,7 @@ namespace 自动化计算工具
                 Margin = new System.Windows.Forms.Padding(10, 8, 10, 10),
                 Appearance = System.Windows.Forms.TabAppearance.Normal,
                 Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Bold),
-                ItemSize = new System.Drawing.Size(0, 32),
+                ItemSize = new System.Drawing.Size(0, 38),
                 Padding = new System.Drawing.Point(12, 8)
             };
 

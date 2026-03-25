@@ -344,8 +344,7 @@ namespace 自动化计算工具
 
             var groupData = groupsData[groupName];
 
-            if ((groupData.FirstWord == null || groupData.FirstWord.Count == 0) &&
-                (groupData.SecondWord == null || groupData.SecondWord.Count == 0))
+            if (groupData.FirstWord == null || groupData.SecondWord == null)
             {
                 MessageBox.Show($"分组 '{groupName}' 中缺少有效的 first_word 或 second_word 数据", "结构错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
