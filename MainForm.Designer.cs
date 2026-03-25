@@ -122,85 +122,91 @@ namespace 自动化计算工具
             currentGroupLabel = new System.Windows.Forms.Label
             {
                 Text = "当前选择的打包字：未选择",
-                Font = new System.Drawing.Font("微软雅黑", 9.5F, System.Drawing.FontStyle.Regular),
+                Font = new System.Drawing.Font("微软雅黑", 9.75F),
                 ForeColor = System.Drawing.Color.FromArgb(0, 102, 204),
                 AutoSize = true,
-                Location = new System.Drawing.Point(25, 15)
+                Location = new System.Drawing.Point(25, 12)
             };
             dataTabPage!.Controls.Add(currentGroupLabel!);
 
             var inputPanel = new System.Windows.Forms.Panel
             {
-                Location = new System.Drawing.Point(25, 50),
-                Width = 500,
-                Height = 140
+                Location = new System.Drawing.Point(25, 48),
+                Width = 510,
+                Height = 118
             };
 
+            // 第一个字
             firstWordLabel = new System.Windows.Forms.Label
             {
                 Text = "第一个字(十进制):",
                 Location = new Point(0, 8),
-                Width = 130,
-                Font = new Font("微软雅黑", 9F)
+                Width = 135,
+                Font = new Font("微软雅黑", 9.5F),
+                TextAlign = System.Drawing.ContentAlignment.MiddleLeft
             };
 
             firstNameLabel = new System.Windows.Forms.Label
             {
                 Text = "第一个字",
-                Font = new Font("微软雅黑", 8.5F),
-                ForeColor = System.Drawing.Color.Gray,
-                Location = new Point(135, 8),
-                Width = 100
+                Font = new Font("微软雅黑", 9F),
+                ForeColor = System.Drawing.Color.FromArgb(100, 100, 100),
+                Location = new Point(140, 10),
+                Width = 90
             };
 
             firstWordEntry = new System.Windows.Forms.TextBox
             {
-                Location = new Point(245, 6),
-                Width = 180,
-                Height = 26,
-                Font = new Font("微软雅黑", 9.5F)
+                Location = new Point(235, 7),
+                Width = 185,
+                Height = 28,
+                Font = new Font("微软雅黑", 10F)
             };
 
             firstCheckButton = new System.Windows.Forms.Button
             {
                 Text = "转换并查询",
-                Location = new Point(435, 5),
+                Location = new Point(430, 6),
                 Width = 105,
-                Height = 28
+                Height = 30,
+                Font = new Font("微软雅黑", 9.5F)
             };
             firstCheckButton.Click += (s, e) => CheckFault(1);
 
+            // 第二个字
             secondWordLabel = new System.Windows.Forms.Label
             {
                 Text = "第二个字(十进制):",
                 Location = new Point(0, 48),
-                Width = 130,
-                Font = new Font("微软雅黑", 9F)
+                Width = 135,
+                Font = new Font("微软雅黑", 9.5F),
+                TextAlign = System.Drawing.ContentAlignment.MiddleLeft
             };
 
             secondNameLabel = new System.Windows.Forms.Label
             {
                 Text = "第二个字",
-                Font = new Font("微软雅黑", 8.5F),
-                ForeColor = System.Drawing.Color.Gray,
-                Location = new Point(135, 48),
-                Width = 100
+                Font = new Font("微软雅黑", 9F),
+                ForeColor = System.Drawing.Color.FromArgb(100, 100, 100),
+                Location = new Point(140, 50),
+                Width = 90
             };
 
             secondWordEntry = new System.Windows.Forms.TextBox
             {
-                Location = new Point(245, 46),
-                Width = 180,
-                Height = 26,
-                Font = new Font("微软雅黑", 9.5F)
+                Location = new Point(235, 47),
+                Width = 185,
+                Height = 28,
+                Font = new Font("微软雅黑", 10F)
             };
 
             secondCheckButton = new System.Windows.Forms.Button
             {
                 Text = "转换并查询",
-                Location = new Point(435, 45),
+                Location = new Point(430, 46),
                 Width = 105,
-                Height = 28
+                Height = 30,
+                Font = new Font("微软雅黑", 9.5F)
             };
             secondCheckButton.Click += (s, e) => CheckFault(2);
 
@@ -217,13 +223,14 @@ namespace 自动化计算工具
 
             resultText = new System.Windows.Forms.RichTextBox
             {
-                Location = new System.Drawing.Point(25, 205),
-                Size = new System.Drawing.Size(505, 320),
+                Location = new System.Drawing.Point(25, 175),
+                Size = new System.Drawing.Size(510, 360),
                 ReadOnly = true,
                 BackColor = System.Drawing.Color.White,
-                Font = new System.Drawing.Font("微软雅黑", 9.5F),
+                Font = new System.Drawing.Font("微软雅黑", 9.75F),
                 BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle,
-                ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical
+                ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical,
+                Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom
             };
             dataTabPage!.Controls.Add(resultText);
         }
@@ -233,23 +240,23 @@ namespace 自动化计算工具
             currentStatusLabel = new System.Windows.Forms.Label
             {
                 Text = "当前选择的状态字：未选择",
-                Font = new System.Drawing.Font("微软雅黑", 9.5F, System.Drawing.FontStyle.Regular),
+                Font = new System.Drawing.Font("微软雅黑", 9.75F),
                 ForeColor = System.Drawing.Color.FromArgb(0, 102, 204),
                 AutoSize = true,
-                Location = new System.Drawing.Point(25, 15)
+                Location = new System.Drawing.Point(25, 12)
             };
             statusTabPage!.Controls.Add(currentStatusLabel!);
 
             statusResultText = new System.Windows.Forms.RichTextBox
             {
-                Location = new System.Drawing.Point(25, 55),
-                Size = new System.Drawing.Size(505, 470),
+                Location = new System.Drawing.Point(25, 48),
+                Size = new System.Drawing.Size(510, 487),
                 ReadOnly = true,
                 BackColor = System.Drawing.Color.White,
-                Font = new System.Drawing.Font("微软雅黑", 9.5F),
+                Font = new System.Drawing.Font("微软雅黑", 9.75F),
                 BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle,
                 ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical,
-                Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right | System.Windows.Forms.AnchorStyles.Bottom
+                Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom
             };
             statusTabPage!.Controls.Add(statusResultText);
         }
@@ -265,22 +272,23 @@ namespace 自动化计算工具
             memoryLeftPanel = new System.Windows.Forms.Panel
             {
                 Dock = System.Windows.Forms.DockStyle.Left,
-                Width = 170,
-                Padding = new System.Windows.Forms.Padding(0, 5, 10, 0)
+                Width = 172,
+                Padding = new System.Windows.Forms.Padding(0, 8, 12, 0)
             };
 
             calcTypeGroupBox = new System.Windows.Forms.GroupBox
             {
                 Text = "计算类型",
                 Dock = System.Windows.Forms.DockStyle.Fill,
-                Font = new Font("微软雅黑", 9.5F),
+                Font = new Font("微软雅黑", 9.75F),
                 Padding = new Padding(10)
             };
 
-            calcType1 = new System.Windows.Forms.RadioButton { Text = "模拟量计算\r\n(16进制地址)", Appearance = Appearance.Button, TextAlign = ContentAlignment.MiddleCenter, Height = 50, Margin = new Padding(5) };
-            calcType2 = new System.Windows.Forms.RadioButton { Text = "模拟量计算\r\n(R地址)", Appearance = Appearance.Button, TextAlign = ContentAlignment.MiddleCenter, Height = 50, Margin = new Padding(5) };
-            calcType3 = new System.Windows.Forms.RadioButton { Text = "数字量计算\r\n(16进制地址+位数)", Appearance = Appearance.Button, TextAlign = ContentAlignment.MiddleCenter, Height = 50, Margin = new Padding(5) };
-            calcType4 = new System.Windows.Forms.RadioButton { Text = "数字量计算\r\n(M地址)", Appearance = Appearance.Button, TextAlign = ContentAlignment.MiddleCenter, Height = 50, Margin = new Padding(5) };
+            calcType1 = new RadioButton { Text = "模拟量计算\n(16进制地址)", Appearance = Appearance.Button, TextAlign = ContentAlignment.MiddleCenter, Height = 46, Margin = new Padding(5, 3, 5, 3) };
+            calcType2 = new RadioButton { Text = "模拟量计算\n(R地址)", Appearance = Appearance.Button, TextAlign = ContentAlignment.MiddleCenter, Height = 46, Margin = new Padding(5, 3, 5, 3) };
+            calcType3 = new RadioButton { Text = "数字量计算\n(16进制+位数)", Appearance = Appearance.Button, TextAlign = ContentAlignment.MiddleCenter, Height = 46, Margin = new Padding(5, 3, 5, 3) };
+            calcType4 = new RadioButton { Text = "数字量计算\n(M地址)", Appearance = Appearance.Button, TextAlign = ContentAlignment.MiddleCenter, Height = 46, Margin = new Padding(5, 3, 5, 3) };
+
             calcType1.CheckedChanged += (s, e) => { if (calcType1.Checked) SwitchMemoryCalcType(1); };
             calcType2.CheckedChanged += (s, e) => { if (calcType2.Checked) SwitchMemoryCalcType(2); };
             calcType3.CheckedChanged += (s, e) => { if (calcType3.Checked) SwitchMemoryCalcType(3); };
@@ -298,29 +306,29 @@ namespace 自动化计算工具
             {
                 Text = "输入参数",
                 Dock = System.Windows.Forms.DockStyle.Top,
-                Height = 180,
-                Font = new Font("微软雅黑", 9.5F),
+                Height = 172,
+                Font = new Font("微软雅黑", 9.75F),
                 Padding = new Padding(15)
             };
 
             memoryCalculateButton = new System.Windows.Forms.Button
             {
                 Text = "开始计算",
-                Width = 160,
+                Width = 165,
                 Height = 38,
                 Font = new Font("微软雅黑", 10F, FontStyle.Bold),
-                Location = new Point(20, 8)
+                Location = new Point(18, 12)
             };
             memoryCalculateButton.Click += MemoryCalculateButton_Click;
 
-            var buttonPanel = new Panel { Dock = DockStyle.Top, Height = 55 };
+            var buttonPanel = new Panel { Dock = DockStyle.Top, Height = 62 };
             buttonPanel.Controls.Add(memoryCalculateButton);
 
             memoryResultGroupBox = new System.Windows.Forms.GroupBox
             {
                 Text = "计算结果",
                 Dock = System.Windows.Forms.DockStyle.Fill,
-                Font = new Font("微软雅黑", 9.5F),
+                Font = new Font("微软雅黑", 9.75F),
                 Padding = new Padding(15)
             };
 
@@ -329,12 +337,12 @@ namespace 自动化计算工具
                 Text = "请先选择计算类型并输入参数",
                 Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold),
                 ForeColor = System.Drawing.Color.FromArgb(231, 76, 60),
-                AutoSize = false,
                 Dock = DockStyle.Fill,
                 TextAlign = System.Drawing.ContentAlignment.MiddleCenter
             };
 
             memoryResultGroupBox.Controls.Add(memoryResultLabel);
+
             memoryRightPanel.Controls.Add(memoryResultGroupBox);
             memoryRightPanel.Controls.Add(buttonPanel);
             memoryRightPanel.Controls.Add(memoryInputGroupBox);
